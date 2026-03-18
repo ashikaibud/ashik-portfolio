@@ -1,8 +1,10 @@
 'use client'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null)
+  const [typedName, setTypedName] = useState('')
+  const finalName = 'Nur'
 
   useEffect(() => {
     const elements = sectionRef.current?.querySelectorAll('[data-animate]')
@@ -15,22 +17,39 @@ export default function Hero() {
     })
   }, [])
 
+  useEffect(() => {
+    let i = 0
+    const timer = setInterval(() => {
+      if (i <= finalName.length) {
+        setTypedName(finalName.slice(0, i))
+        i++
+      } else {
+        clearInterval(timer)
+      }
+    }, 300)
+    return () => clearInterval(timer)
+  }, [])
+
   return (
-    <section id="hero" ref={sectionRef} className="min-h-screen flex flex-col justify-center px-6 pt-24 pb-16 max-w-6xl mx-auto relative">
+    <section id="hero" ref={sectionRef} className="min-h-screen flex flex-col justify-center px-6 pt-24 pb-16 max-w-7xl mx-auto relative">
       <div className="grid md:grid-cols-2 gap-16 items-center">
         <div>
-          <p data-animate className="opacity-0 text-xs font-body tracking-[0.3em] uppercase text-accent mb-6">
-            Frontend Developer · Dhaka, Bangladesh
+          <p data-animate className="opacity-0 text-sm font-body tracking-[0.3em] uppercase text-accent mb-6">
+            Full-Stack Software Engineer · Dhaka, Bangladesh
           </p>
-          <h1 data-animate className="opacity-0 font-display text-6xl md:text-7xl lg:text-8xl font-light leading-[0.95] text-ink mb-8">
-            MD Asad-<br />uzzaman<br /><span className="italic text-accent">Nur</span>
+          <h1 data-animate className="opacity-0 font-display text-7xl md:text-8xl lg:text-9xl font-light leading-[0.95] text-ink mb-8">
+            MD Asad-<br />uzzaman<br />
+            <span className="italic text-accent relative">
+              {typedName}
+              <span className="animate-pulse">|</span>
+            </span>
           </h1>
           <p data-animate className="opacity-0 font-body text-muted text-lg leading-relaxed max-w-md mb-10">
             I build scalable web solutions and digital products. Founder &amp; CEO of{' '}
             <span className="text-ink font-medium">Ashik IT Center</span> — turning ideas into profitable ventures through clean code and strategic thinking.
           </p>
           <div data-animate className="opacity-0 flex flex-wrap gap-4">
-            <a href="#projects" className="font-body text-sm tracking-widest uppercase bg-ink text-cream px-8 py-3 hover:bg-accent transition-colors duration-300">
+            <a href="#projects" className="font-body text-sm tracking-widest uppercase bg-ink text-cream px-8 py-3 hover:bg-accent hover:text-cream transition-colors duration-300">
               View Projects
             </a>
             <a href="#contact" className="font-body text-sm tracking-widest uppercase border border-ink text-ink px-8 py-3 hover:bg-ink hover:text-cream transition-all duration-300">
@@ -47,21 +66,21 @@ export default function Hero() {
         </div>
         <div data-animate className="opacity-0 hidden md:flex justify-end">
           <div className="relative">
-            <div className="absolute -top-4 -right-4 w-64 h-64 border border-border" />
-            <div className="relative w-64 h-64 bg-surface flex flex-col justify-between p-8 border border-border">
+            <div className="absolute -top-4 -right-4 w-72 h-72 border border-border" />
+            <div className="relative w-72 h-72 bg-surface flex flex-col justify-between p-10 border border-border">
               <div>
-                <p className="font-display text-5xl font-light text-ink">3+</p>
-                <p className="font-body text-xs tracking-widest uppercase text-muted mt-1">Years Experience</p>
+                <p className="font-display text-6xl font-light text-ink">4+</p>
+                <p className="font-body text-xs tracking-widest uppercase text-muted mt-2">Years Experience</p>
               </div>
               <div className="w-full h-px bg-border" />
               <div>
-                <p className="font-display text-5xl font-light text-ink">8+</p>
-                <p className="font-body text-xs tracking-widest uppercase text-muted mt-1">Live Projects</p>
+                <p className="font-display text-6xl font-light text-ink">10+</p>
+                <p className="font-body text-xs tracking-widest uppercase text-muted mt-2">Live Projects</p>
               </div>
               <div className="w-full h-px bg-border" />
               <div>
-                <p className="font-display text-5xl font-light text-accent">∞</p>
-                <p className="font-body text-xs tracking-widest uppercase text-muted mt-1">Ideas to Build</p>
+                <p className="font-display text-6xl font-light text-accent">∞</p>
+                <p className="font-body text-xs tracking-widest uppercase text-muted mt-2">Ideas to Build</p>
               </div>
             </div>
           </div>

@@ -11,12 +11,12 @@ module.exports = {
         body: ['DM Sans', 'sans-serif'],
       },
       colors: {
-        cream: '#F5F0E8',
-        ink: '#1A1A18',
+        cream: '#050505',
+        ink: '#F0F0F0',
         accent: '#C8A96E',
-        muted: '#8A8478',
-        surface: '#EDEAE2',
-        border: '#D8D3C8',
+        muted: '#9CA3AF',
+        surface: '#121212',
+        border: '#2A2A2A',
       },
       animation: {
         'fade-up': 'fadeUp 0.7s ease forwards',

@@ -4,8 +4,8 @@ import { useEffect, useRef } from 'react'
 const skillGroups = [
   { category: 'Frontend', skills: ['HTML5', 'CSS3', 'JavaScript', 'React.js', 'Next.js', 'Tailwind CSS', 'UI/UX Design'] },
   { category: 'Backend', skills: ['PHP', 'Laravel', 'Node.js', 'Python', 'MySQL', 'API Integration', 'Payment Gateways'] },
-  { category: 'Tools & Platforms', skills: ['WordPress', 'Git', 'GitHub', 'Canva', 'Adobe Premiere Pro', 'CapCut', 'Microsoft Office'] },
-  { category: 'Marketing & AI', skills: ['SEO', 'Social Media Marketing', 'AI Content Tools', 'Campaign Optimization', 'Marketing Automation', 'Content Strategy'] },
+  { category: 'Tools & Platforms', skills: ['Video Editing', 'WordPress', 'Git', 'GitHub', 'Canva', 'Adobe Premiere Pro', 'CapCut'] },
+  { category: 'Marketing & AI', skills: ['SEO', 'Digital Marketing', 'AI Development', 'Campaign Optimization', 'Marketing Automation', 'Content Strategy'] },
   { category: 'Business', skills: ['Project Management', 'Agile / Scrum', 'Team Leadership', 'Strategic Planning', 'E-commerce', 'Client Relations'] },
 ]
 

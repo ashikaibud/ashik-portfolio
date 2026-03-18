@@ -13,13 +13,13 @@
 html { scroll-behavior: smooth; }
 
 body {
-  background-color: #F5F0E8;
-  color: #1A1A18;
+  background-color: #050505;
+  color: #F0F0F0;
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
 }
 
-::selection { background: #C8A96E; color: #F5F0E8; }
+::selection { background: #C8A96E; color: #050505; }
 ::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: #F5F0E8; }
+::-webkit-scrollbar-track { background: #050505; }
 ::-webkit-scrollbar-thumb { background: #C8A96E; border-radius: 2px; }
